@@ -1,7 +1,7 @@
 import { DOMSelectors } from "./dom";
 export async function getData() {
     try {
-         const response = await fetch('https://api.jikan.moe/v4/seasons/upcoming'); 
+         const response = await fetch('https://api.jikan.moe/v4/top/anime?sfw'); 
          if(response.status != 200){
             throw new Error(response);
          } else {
