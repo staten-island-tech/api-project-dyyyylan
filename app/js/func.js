@@ -6,12 +6,16 @@ export async function getData() {
             throw new Error(response);
          } else {
                 const data = await response.json();
+                console.log(data.data);
                 DOMSelectors.container.innerHTML = ""
                 data.data.forEach((anime) => DOMSelectors.container.insertAdjacentHTML(
-                    'beforeend', `<div class="card">
-                    <p class="card-title">${anime.title}</p>
-                    <p class="card-description">${anime.type}</p>
-                    </div> `))
+                    'beforeend',     
+                    `<div class="card">
+                    <img src="${anime.images.jpg.image_url}" alt="img" class="card-img">
+                  <div class="card-content">
+                  <p class="card-title">${anime.title}</p>
+                  <p class="card-description">${anime.status}</p>
+                  </div> `,))
 
          }
     } catch(error){ 
@@ -19,5 +23,6 @@ export async function getData() {
         console.log("stupid monkey");
     }
 }
+
 
 
