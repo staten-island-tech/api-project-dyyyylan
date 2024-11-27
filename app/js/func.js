@@ -10,13 +10,12 @@ export async function getData() {
                 console.log(data.data);
                 data.data.forEach((anime) => DOMSelectors.container.insertAdjacentHTML(
                     'beforeend',     
-                    `<div class="card w-1/2 bg-base-100 bg-opacity-50 shadow-lg">
-                    <img src="${anime.images.jpg.image_url}" alt="img" class="card-img rounded-lg p-0 border h-auto mx-auto">
-                  <div class="card-content">
-                  <p class="card-title text-center">${anime.title}</p>
-                  <p class="card-description text-center">${anime.status}</p>
+                    `<div class="card w-[60%] h-[100%] rounded-lg bg-base-100 bg-opacity-50 shadow-lg">
+                    <img src="${anime.images.jpg.image_url}" alt="img" class="card-img mt-2 w-[100%] mx-auto">
+                  <div class="card-content text-center">
+                  <p class="card-title ">${anime.title}</p>
+                  <p class="card-description ">${anime.status}</p>
                   </div> `,))
-
          }
     } catch(error){ 
         console.log(error);
